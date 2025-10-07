@@ -331,6 +331,49 @@
 
 / {
     macros {
+
+        // Custom æ, ø, å
+
+        // ø  (Option+O, but Alt released immediately)
+        NB_OE_v1_TKZ: NB_OE_v1_TKZ {
+            label = "&NB_OE_V1_TKZ";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <0>;
+            wait-ms = <0>;
+            bindings =
+                <&macro_press>,   <&kp RALT>,
+                <&macro_tap>,     <&kp O>,
+                <&macro_release>, <&kp RALT>;
+        };
+        
+        // æ  (Option+QUOTE on your map; change QUOTE if your æ source differs)
+        NB_AE_v1_TKZ: NB_AE_v1_TKZ {
+            label = "&NB_AE_V1_TKZ";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <0>;
+            wait-ms = <0>;
+            bindings =
+                <&macro_press>,   <&kp RALT>,
+                <&macro_tap>,     <&kp SQT>,
+                <&macro_release>, <&kp RALT>;
+        };
+        
+        // å  (Option+A on your map)
+        NB_AA_v1_TKZ: NB_AA_V1_TKZ {
+            label = "&NB_AA_V1_TKZ";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <0>;
+            wait-ms = <0>;
+            bindings =
+                <&macro_press>,   <&kp RALT>,
+                <&macro_tap>,     <&kp A>,
+                <&macro_release>, <&kp RALT>;
+        };
+
+
         // AutoShift Helper- &AS main macro is chained to &AS_HT hold tap and &AS_Shifted macro - TailorKey
 
         AS_Shifted_v1_TKZ: AS_Shifted_v1_TKZ {
